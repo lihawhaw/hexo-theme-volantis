@@ -410,8 +410,8 @@ plugins:
   # 除appID和appKEY外均为选填项
   Artitalk:
     enable: false # true为开启，false为关闭
-    appID: ogP8qj3veMh0LFpFWMPOyF0X-MdYXbMMI # your appID
-    appKEY: nHXLd3N3Jgh460t2iRQKWAtr # your appKEY
+    appID: eOr1Epm8WT2pKJASGeOwhWXh-gzGzoHsz # your appID
+    appKEY: 6Vvg7VJKdN19P1pU0JAtrbdD # your appKEY
     # severurl:  #leancloud绑定的安全域名，使用国际版的话不需要填写
     # slanguage: # 语言设置，zh为汉语，en为英语，es为西班牙语。默认为汉语
     # per: #每页说说的显示数量
@@ -434,8 +434,8 @@ comments:
   # Valine
   # https://valine.js.org/
   valine: # 请将 appId appKey 修改为自己的，否则评论数据是共享的。
-    appId: dogUA2FSKGTo029M1SEwGROT-MdYXbMMI # your appId
-    appKey: u0NdtQ8nvHoMdJPSYqm1LRxE # your appKey
+    appId: eOr1Epm8WT2pKJASGeOwhWXh-gzGzoHsz # your appId
+    appKey: 6Vvg7VJKdN19P1pU0JAtrbdD # your appKey
     # js: https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js
     path: # All pages use the same path (share the same comments data)
     meta: nick,mail,link # valine comment header info
@@ -451,7 +451,7 @@ comments:
   # MiniValine
   # https://github.com/MiniValine/MiniValine
   minivaline:
-    appId: # your appId
+    appId:  # your appId
     appKey: # your appKey
     js: https://cdn.jsdelivr.net/npm/minivaline@2/dist/MiniValine.min.js
     mode: xCss # DesertsP or xCss
@@ -538,11 +538,13 @@ search:
 
 
 
-############################### Theme Information ###############################
+# ############################### Theme Information ###############################
 info:
-  name: Volantis # This is theme's name.
+  name: OneDoub # This is theme's name.
   version: '2.6.6' # This is theme's version.
   docs: https://volantis.js.org/ # This is theme's URL.
   cdn:
     js: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/app.js
     css:
+    
+lazyload.isSPA: true
