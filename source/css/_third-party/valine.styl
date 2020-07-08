@@ -25,19 +25,22 @@
               border-bottom: 1px dashed $color-theme
             &:focus
               border-bottom: 1px solid $color-theme
-
+        .vedit
+          .vicon
+            height: 22px
         .vemojis,.vpreview
           background: $color-block
           border-radius: $border-codeblock
           padding: $gap * 0.5
           scrollbar()
+          .vemoji
+            max-height: 22px
+            max-width: 100px
           i
             width: auto
             padding: 8px
             border-radius: 4px
             transition: box-shadow .2s ease-out, background .2s ease-out
-            #emoji,.emoji
-              background: transparent
             if luminosity($color-block) > 0.5
               &:hover
                 background: lighten($color-block, 2)
@@ -54,25 +57,29 @@
             &.actived
               fill: $color-theme
       .vcount
+        color: $color-p
         font-size: $fontsize-meta
         padding: 0
         font-weight: inherit
         .vnum
+          color: $color-p
           font-size: $fontsize-h2
 
       button
         border: none
-        padding: 9px 2rem 7px 2rem
+        padding: 4px 2rem
         border-radius: $border-button
         background: darken($color-block, 2)
         color: $color-text
+        line-height: 2
+        font-size: 14px
         trans()
         &:hover
           color: $color-hover
           background: bgcolor($color-hover)
         &.vmore
           width: 100%
-          padding: $gap-paragraph 2rem
+          padding: 8px 2rem
       .vcards
         .vquote
           border-left: none
@@ -91,7 +98,7 @@
         .vhead
           span
             &.vnick
-              color: $color-meta
+              color: lighten($color-p, 10)
               cursor: default
           a
             &.vnick
@@ -128,18 +135,31 @@
               border: none
           a
             color: $color-link
+            line-height: inherit
             trans()
             &:hover
               color: $color-hover
+              text-decoration: underline
           p
+            color: $color-p
             margin-top: $gap-row
             margin-bottom: $gap-row
+            line-height: inherit
           .vemoji
-            max-height: 25px
+            max-height: 24px
             border-radius: 0
-      .vcopy
+            margin-top: -10px
+            max-width: 100px
+      .vempty
+        color: $color-meta
+      .vpower
         &,a
           font-size: $fontsize-footnote
+        a
+          color: $color-p
+          &:hover
+            text-decoration: underline
+            color: $color-hover
       .vinput
         color: $color-text
       p
