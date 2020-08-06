@@ -1,20 +1,26 @@
-</html>
-
 <!DOCTYPE html>
 <html>
 <%- partial('_partial/head') %>
-
 <body>
-    <%- partial('_partial/cover') %>
-    <div class="l_body<%- page.cover ? '' : ' nocover' %>">
-        <div class='body-wrapper'>
-            <%- body %>
-            <script>setLoadingBarProgress(60);</script>
-        </div>
-        <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  <%- partial('_partial/cover') %>
+  <div class="l_body<%- page.cover ? '' : ' nocover' %>">
+    <div class='body-wrapper' id="pjax-container">
+      <% if (theme.plugins.pjax.enable) { %>
+        <%- partial('_third-party/pjax/data') %>
+      <% } %>
+      <%- body %>
     </div>
+    <!-- <%- partial('_partial/footer', null, {cache: !config.relative_link}) %> 李哈哈哈 -->
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <div>
+    <% if (theme.rightmenu && theme.rightmenu.enable == true) { %>
+      <%- partial('_partial/rightmenu') %>
+    <% } %>
     <%- partial('_partial/scripts') %>
-    <script>setLoadingBarProgress(100);</script>
+    <% if (theme.plugins.pjax.enable) { %>
+      <%- partial('_third-party/pjax/index') %>
+    <% } %>
+  </div>
 </body>
-
 </html>

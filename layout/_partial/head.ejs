@@ -66,6 +66,7 @@
   <% if (keywords){ %>
   <meta name="keywords" content="<%- keywords %>">
   <% } %>
+
   <% if (description){ %>
   <meta name="description" content="<%- description %>">
   <% } %>
@@ -98,7 +99,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
   <% } %>
 
-  <% if (theme.comments.vssue && theme.comments.vssue.clientId) { %>
+  <% if (theme.comments.service == 'vssue') { %>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/meteorlxy/vssue@1.4.4/packages/vssue/dist/vssue.min.css">
   <% } %>
 
@@ -118,12 +119,6 @@
   <% } else { %>
   <%- css('css/style.css') %>
   <% } %>
-
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width = num + "%";
-    }
-  </script>
 
   <% if (config.google_analytics_key) { %>
   <!-- Global site tag (gtag.js) - Google Analytics -->
