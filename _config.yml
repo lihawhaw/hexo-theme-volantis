@@ -120,7 +120,7 @@ cover:
     home: true
     archive: true
     others: false # can be written in front-matter 'cover: true'
-  logo: # https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/256/google_logo.png
+  logo:
   title: 一个逗比
   subtitle: 'Love what you do,do what you love.'
   search: 探索一下吧 喵~ # search bar placeholder
@@ -132,7 +132,7 @@ cover:
 # 头部导航
 navbar:
   logo: # choose [img] or [icon + title]
-    img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+    img:
     icon:
     title: "OneDoub"
   search: 探索一下 喵~
@@ -360,7 +360,7 @@ widget:
 footer:
   # layout of footer: [aplayer, social, license, info, copyright]
   layout: [aplayer,elapsedTime,badges]
-  # elapsedTime: '02/28/2020 17:38:00' #网站运行时间
+  elapsedTime: '<br>' #网站运行时间
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
 
@@ -633,10 +633,10 @@ rightmenu:
     icon: fa fa-print
     onclick: document.execCommand('print')
   # 自定义菜单的格式如下
-  help:
-    name: 常见问题
-    icon: fa fa-question
-    url: https://volantis.js.org/faqs/
+  # help:
+  #   name: 常见问题
+  #   icon: fa fa-question
+  #   url: https://volantis.js.org/faqs/
 
 
 ############################### Search ###############################
