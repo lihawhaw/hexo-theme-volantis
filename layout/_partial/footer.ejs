@@ -47,7 +47,11 @@
         </div>
       <% } else { %>
         <% if (item in theme.site_footer) { %>
-          <br>
+          <div><%- markdown(theme.site_footer[item]) %></div>
+        <% } %>
+      <% } %>
+    <% }) %>
+    <br>
           <br>
           <br>
           <div class="github-pages">
@@ -78,11 +82,6 @@
           </div>
           <br>
           <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-
-          <div><%- markdown(theme.site_footer[item]) %></div>
-        <% } %>
-      <% } %>
-    <% }) %>
   </footer>
   <% } %>
   <script>

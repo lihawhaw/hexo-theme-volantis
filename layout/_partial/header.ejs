@@ -7,33 +7,33 @@
         <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         <% if (page.sidebar == undefined || page.sidebar != false) { %>
           <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
-          <% } %>
-        </ul>
-      </div>
-      <div class="nav-main">
-        <% if (theme.navbar.logo) { %>
+        <% } %>
+      </ul>
+    </div>
+		<div class="nav-main">
+      <% if (theme.navbar.logo) { %>
         <% let logo = theme.navbar.logo %>
         <a class="title flat-box" target="_self" href='<%- url_for("/") %>'>
           <% if (logo.img) { %>
-          <img no-lazy class='logo' src='<%- logo.img %>' />
+            <img no-lazy class='logo' src='<%- logo.img %>'/>
           <% } %>
           <% if (logo.icon) { %>
-          <i class='<%- logo.icon %>'></i>
+            <i class='<%- logo.icon %>'></i>
           <% } %>
           <% if (logo.title) { %>
-          <%- logo.title %>
+            <%- logo.title %>
           <% } %>
         </a>
-        <% } %>
+      <% } %>
 
 			<div class='menu navigation'>
 				<ul class='nav-list-h m-pc'>
           <%
           let menu_list = theme.navbar.menu;
           %>
-            <% function menu(value, type) { %>
+          <% function menu(value, type) { %>
             <% if (value.name == 'hr') { %>
-            <hr>
+              <hr>
             <% } else if (value.icon && value.icon.indexOf('fa-compact-disc') > -1 && value.url  == undefined && value.rows  == undefined) { %>
               <% if (type == 'pc') { %>
                 <li>
@@ -48,19 +48,7 @@
                     </li>
                   </ul>
                 <li>
-                  <div class="aplayer-container">
-                    <%- partial('../_third-party/aplayer', {post: null, where: 'footer'}) %>
-                  </div>
-                </li>
-              </ul>
-            <li>
-              <div class="aplayer-container">
-                <%- partial('../_third-party/aplayer', {post: null, where: 'footer'}) %>
-              </div>
-            </li>
-          </ul>
-          <li>
-            <% } %>
+              <% } %>
             <% } else if (value.name != undefined && value.url  == undefined && value.rows == undefined) { %>
               <li class='header'>
                 <% if (value.icon) { %><i class='<%= value.icon %> fa-fw'></i><% } %><%- value.name %>
@@ -88,21 +76,19 @@
                 <% } %>
               </li>
             <% } %>
-          </li>
-          <% } %>
           <% } %>
           <% menu_list.forEach(function(value){ %>
-          <% menu(value, 'pc') %>
+            <% menu(value, 'pc') %>
           <% }) %>
-          </ul>
-        </div>
+				</ul>
+			</div>
 
-        <div class="m_search">
-          <form name="searchform" class="form u-search-form">
-            <i class="icon fas fa-search fa-fw"></i>
-            <input type="text" class="input u-search-input" placeholder="<%- theme.navbar && theme.navbar.search %>" />
-          </form>
-        </div>
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="<%- theme.navbar && theme.navbar.search %>" />
+        </form>
+      </div>
 
 			<ul class='switcher nav-list-h m-phone'>
 				<% if (theme.search.enable === true) { %>
@@ -113,11 +99,11 @@
           <ul class="menu-phone list-v navigation white-box">
             <% menu_list.forEach(function(value){ %>
               <% menu(value, 'mobile') %>
-              <% }) %>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
+            <% }) %>
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
   </div>
 </header>
