@@ -1,10 +1,11 @@
 ############################### Volantis ###############################
 info:
-  theme_name: 小巷 # This is theme's name.
-  theme_version: '4.0.0-rc.2' # This is theme's version.
-  theme_docs: https://lihaha.me/ # This is theme's URL.
-  theme_repo: https://github.com/lihawhaw
-  cdn:
+  name: 小巷
+  version: 1.7.4
+  docs: https://volantis.js.org/
+  cdn: # 要使用CDN，请在根目录的config文件中写上 use_cdn: true
+    css:
+      # style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.7.4/css/style.css
     js:
     css:
 #
