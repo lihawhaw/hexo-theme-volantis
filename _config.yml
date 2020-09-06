@@ -7,7 +7,6 @@ info:
     css:
       # style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.7.4/css/style.css
     js:
-    css:
 #
 # 从 v4 开始不再支持数据文件，全部的自定义设置请写在 _config.volantis.yml 中
 #
