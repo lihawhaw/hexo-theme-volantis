@@ -8,7 +8,6 @@ info:
     js:
     css:
       # style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.7.4/css/style.css
-    js:
 #
 # 从 v4 开始不再支持数据文件，全部的自定义设置请写在 _config.volantis.yml 中
 #
@@ -139,9 +138,7 @@ article:
       # 打赏组件 (for layout: post)
       donate:
         enable: false
-        images:
-          - https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
-          - https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
+        images: 
     # 文章底部信息
     # 从 meta_library 中取
     bottom_meta: [updated, tags, share]
