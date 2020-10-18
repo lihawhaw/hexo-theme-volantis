@@ -37,4 +37,4 @@
       };
       i()
       };
-      binft(document.getElementById('binft'));
+      binft(document.getElementsByClassName('subtitle'));
