@@ -75,7 +75,7 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('config', '<%- config.google_analytics_key %>', {'page_path': document.location.pathname});
       <% } %>
-	 
+
 
       $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
       $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
@@ -99,11 +99,9 @@
         <% if (theme.plugins.scrollreveal.enable) { %>
           pjax_scrollrebeal();
         <% } %>
-        <% if (theme.plugins.issues.enable) { %>
-          if (typeof IssuesAPI == "undefined") {
-            loadIssuesJS();
-          }
-        <% } %>
+        if (typeof IssuesAPI == "undefined") {
+          loadIssuesJS();
+        }
         <% if (theme.plugins.clipboard.enable && (theme.custom_css.body.highlight.copy_btn == true)) { %>
           pjax_initCopyCode();
         <% } %>
@@ -124,7 +122,14 @@
           pjax_disqus();
         <% } %>
         <% if (theme.comments.service == 'twikoo'){ %>
-          pjax_twikoo();
+          if (typeof twikoo == "undefined") {
+            load_twikoo();
+          } else {
+            pjax_twikoo();
+          }
+        <% } %>
+        <% if (theme.comments.service == 'waline'){ %>
+          pjax_waline();
         <% } %>
       } catch (e) {
         console.log(e);

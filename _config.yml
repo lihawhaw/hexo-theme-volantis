@@ -53,7 +53,7 @@ cover:
     home: true
     archive: true
     others: false # can be written in front-matter 'cover: true'
-  background: https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg
+  background: https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture
   logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
   title: 'Volantis'
   subtitle: ''
@@ -209,17 +209,18 @@ article:
 comments:
   title: <i class='fas fa-comments'></i> 评论
   subtitle:
-  service: valine # valine, minivaline, disqus, gitalk, vssue, livere, isso, hashover, twikoo
+  service: valine # valine, minivaline, disqus, gitalk, vssue, livere, isso, hashover, twikoo, waline
   # Valine
   # https://valine.js.org/
   valine:
-    appId: # your appId
-    appKey: # your appKey
     # js: https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js
     path: # 全局评论地址
     placeholder: 快来评论吧~  # 评论占位提示
-    meta: nick,mail,link # valine comment header info
-    requiredFields: ['nick','mail']
+    # 其他配置项按照yml格式继续填写即可 除了 [el path placeholder emojiCDN emojiMaps] 选项
+    appId: # your appId
+    appKey: # your appKey
+    meta: [nick,mail,link] # valine comment header info
+    requiredFields: [nick,mail]
     enableQQ: true # Unstable avatar link
     recordIP: false # Record commenter IP
     avatar: robohash # gravatar style https://valine.js.org/avatar
@@ -234,10 +235,11 @@ comments:
     js: https://cdn.jsdelivr.net/npm/minivaline@latest
     path: # 全局评论地址
     placeholder: 快来评论吧~  # 全局评论占位提示
-    # 更多选项 https://minivaline.js.org/docs/cn/#/Options 按照yml格式继续填写即可 （除了 [el] [pathname] [placeholder] 选项）  emoticonUrl可参考 https://github.com/MiniValine/hexo-next-minivaline
-    # mode: xCss # DesertsP or xCss
-
-
+    # 更多选项 https://minivaline.js.org/docs/cn/#/Options 按照yml格式继续填写即可 （除了 [el path placeholder] 选项）
+    # emoticonUrl 等列表选项 可参考 https://github.com/MiniValine/hexo-next-minivaline
+    # 下面是一个例子：
+    backend: waline
+    serverURL: https://waline.vercel.app
   # Disqus
   # https://disqus.com
   disqus:
@@ -248,6 +250,7 @@ comments:
   # Gitalk
   # https://gitalk.github.io/
   gitalk:
+    # 配置项按照yml格式继续填写即可 除了 [id distractionFreeMode] 选项
     clientID:
     clientSecret:
     repo:
@@ -277,8 +280,25 @@ comments:
   # Twikoo
   # https://twikoo.js.org/
   twikoo:
-    js: #https://cdn.jsdelivr.net/npm/twikoo@0.3.0/dist/twikoo.all.min.js   (本地为twikoo v0.3.0版本)
+    js: https://cdn.jsdelivr.net/npm/twikoo@latest # 建议锁定版本
+    path: # 全局评论地址
+    # 其他配置项按照yml格式继续填写即可 除了 [el path] 选项
     envId: xxxxxxxxxxxxxxx # 腾讯云环境id
+  # Waline
+  # https://waline.js.org/
+  waline:
+    js: https://cdn.jsdelivr.net/npm/@waline/client@latest
+    path: # 全局评论地址
+    placeholder: 快来评论吧~  # 评论占位提示
+    imageHosting: https://7bu.top/api/upload # 图床api（默认使用去不图床）
+    # 其他配置项按照yml格式继续填写即可 除了 [el path placeholder uploadImage] 选项
+    meta: [nick,mail,link] # waline comment header info
+    requiredFields: [nick,mail]
+    serverURL: xxxxxxxxxxxxxxx # Waline 的服务端地址（必填） 测试用地址: https://waline-ruddy.vercel.app
+    avatar: robohash # gravatar style https://waline.js.org/client/basic.html#avatar
+    pageSize: 10 # 评论每页显示数量
+    lang: zh-CN
+
 ############################### Comments ############################### > end
 
 ############################### Sidebar ############################### > start
@@ -575,6 +595,7 @@ plugins:
   # 除appID和appKEY外均为选填项
   artitalk:
     # Set `layout: artitalk` to enable in page
+    # 配置项按照yml格式继续填写即可
     appId: ogP8qj3veMh0LFpFWMPOyF0X-MdYXbMMI # your appID
     appKey: nHXLd3N3Jgh460t2iRQKWAtr # your appKEY
     # serverURL:  #leancloud绑定的安全域名，使用国际版的话不需要填写
@@ -593,9 +614,7 @@ plugins:
   # {% issues sites/timeline/friends | api=xxx | group=key:a,b,c %}
   # 例如：
   # {% issues sites | api=https://api.github.com/repos/volantis-x/examples/issues?sort=updated&state=open&page=1&per_page=100 | group=version:latest,v6,v5,v4,v3,v2,v1,v0 %}
-  issues:
-    enable: #true
-    js:
+
 
   # 暗黑模式 darkmode
   # 样式：source/css/_plugins/dark.styl
@@ -606,6 +625,12 @@ plugins:
   darkmodejs:
     enable: #true
 
+  # 旧版 Internet Explorer 淘汰行动
+  # https://support.dmeng.net/kill-old-versions-of-ie.html
+  # 本主题不支持Internet Explorer的任何版本!!!
+  killOldVersionsOfIE:
+    enable: true
+    action: alert # jump: 升级提示跳转 alert: 升级提示弹窗
 ############################### Plugins ############################### > end
 
 ############################### Rightmenu ############################### > start
